@@ -13,11 +13,10 @@
   <body class="comtainer">
     <h1>
         <?php
-        // Solicita a entrada dos valores A e B
+    
         $a = $_POST["a"];
         $b = $_POST["b"];
 
-        
         if ($a < $b) {
             echo "Valores: $a $b\n";
         } elseif ($a > $b) {
