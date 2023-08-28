@@ -8,29 +8,22 @@
   </head>
   <body class="container">
     <h1>Exercício 3</h1>
-    <form action="exe3resp.php" method="POST">
+    <form action="exe2resp.php" method="POST">
         <div class="row">
-            <?php for($i=1;$i<=10;$i++) { ?>
+            <?php for($i=1;$i<=5;$i++) { ?>
                 <div class="col">
-                    <label class="form-label" for="v<?=$i?>">
+                    <label class="form-label" for="a<?=$i?>">
                     Informe o numero <?=$i?>:
                     </label>
-                    <input type="number" id="v<?=$i?>" name="v<?=$i?>" class="form-control"/>
+                    <input type="number" id="a<?=$i?>" name="a<?=$i?>" class="form-control"/>
                 </div>
             <?php
              } ?>
         </div>
+        
         <div class="row">
             <div class="col">
-                <label for="valor_mult" class="form-label">
-                    Informe o valor a ser multiplicado:
-                </label>
-                <input type="number" id="valor_mult" name="valor_mult" class="form-control"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-success">Calcular</button>
+                <button type="submit" class="btn btn-success" style="margin-top: 30px;">Aplicar</button>
             </div>
         </div>
     </form>
