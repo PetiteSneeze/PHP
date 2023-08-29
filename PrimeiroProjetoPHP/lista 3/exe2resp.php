@@ -23,7 +23,7 @@
        }
     }
 
-    echo "Existem na lista $negativos numeros negativos!";
-    echo "Existem na lista $positivos numeros positivos!";
-    echo "Existem na lista $par numeros pares!";
-    echo "Existem na lista $impar numeros impares!";
+    echo "<br/>Existem na lista $negativo numeros negativos!";
+    echo "<br/>Existem na lista $positivos numeros positivos!";
+    echo "<br/>Existem na lista $par numeros pares!";
+    echo "<br/>Existem na lista $impar numeros impares!";
