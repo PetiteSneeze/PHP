@@ -13,15 +13,15 @@
     $texto = fopen("arquivo2.txt", "w") or die("Erro");
     fwrite($texto, $_POST["nome"]. "\n");
     fwrite($texto, $_POST["cpf"]. "\n");
-    fwrite($texto, $_POST["dataNascimento"]."\n");
-    fwrite ($sexo, $_POST["sexo"]."\n");
-    fwrite ($estado_Civil, $_POST["estado_civil"]."\n");
-    fwrite ($renda_Mensal, $_POST["Renda_mensal"]."\n");
-    fwrite ($logradouro, $_POST["logradouro"]."\n");
-    fwrite ($numero, $_POST["numero"]."\n");
-    fwrite ($complemento, $_POST["complemento"]."\n");
-    fwrite ($estado, $_POST["estado"]."\n");
-    fwrite ($cidade, $_POST["cidade"]."\n");
+    fwrite($texto, $_POST["data_nascimento"]."\n");
+    fwrite ($texto, $_POST["sexo"]."\n");
+    fwrite ($texto, $_POST["estado_civil"]."\n");
+    fwrite ($texto, $_POST["renda_mensal"]."\n");
+    fwrite ($texto, $_POST["logradouro"]."\n");
+    fwrite ($texto, $_POST["numero"]."\n");
+    fwrite ($texto, $_POST["complemento"]."\n");
+    fwrite ($texto, $_POST["estado"]."\n");
+    fwrite ($texto, $_POST["cidade"]."\n");
     fclose($texto);
     readfile("arquivo2.txt");
 
@@ -37,6 +37,21 @@
     else{
         echo"Erro ao salvar arquivo";
     }
+
+    if($_FILES["arquivo"] ["size"] > 500000){
+        echo "desculpe, o arquivo é muito grande";
+        die();
+    }
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"){
+        echo"Desculpe, somente JPG, PNG, & GIF arquivo sao permitidos!";
+        die();
+    }
+    if(move_uploaded_file($_FILES["arquivo"] ["temp_name"], $target_file)){
+        echo "O arquivo ".htmlspecialchars(basename($_FILES["arquivo"]["name"]))."foi carregado";
+    }else{
+        echo"desculpe, erro ao subir arquivo";
+    }
+
 
     ?>
    
