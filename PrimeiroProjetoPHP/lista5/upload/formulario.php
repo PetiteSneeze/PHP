@@ -99,7 +99,7 @@
                     </div>
                     <div class="text-center">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
+</div>
     </div>
                 </form>
             </div>
