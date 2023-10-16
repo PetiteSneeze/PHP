@@ -28,7 +28,7 @@ $router->get("/categoria/alterar",
 );
 
 $router->get("/categoria/excluir",
-    'Php\Biblioteca\Controller\CategoriaController@inserir'
+    'Php\Biblioteca\Controller\CategoriaController@excluir'
 );
 
 
