@@ -63,7 +63,7 @@ class categoriaDAO{
             $sql = "SELECT * FROM categoria WHERE id = :id";
             $ps =$this->dao->getConexao()->prepare($sql);
             $ps->bindValue(":id", $id);
-
+            $ps->execute();
             return $ps->fetch();
         }catch(Exception $e){
             return 0;

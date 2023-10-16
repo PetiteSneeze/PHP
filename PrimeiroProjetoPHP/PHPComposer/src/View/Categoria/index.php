@@ -8,12 +8,57 @@
     
     if(isset($_SESSION['gravar'])){
         if($_SESSION['gravar'])
-        echo "Registro gravado!";
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Registro gravado com sucesso!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
         else
-            echo "Erro ao salvar";
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Erro ao gravar registro, verifique!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
             unset($_SESSION['gravar']);
     }
 
+    if(isset($_SESSION['editar'])){
+        if($_SESSION['editar'])
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Registro editado com sucesso!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+        else
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Erro ao editar registro, verifique!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
+            unset($_SESSION['editar']);
+    }
+
+    if(isset($_SESSION['deletar'])){
+        if($_SESSION['deletar'])
+        echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
+        Registro deletado!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+        else
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Erro ao deletar registro, verifique!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
+            unset($_SESSION['deletar']);
+    }
     ?>
     
         <table class="table table-striped table-hover">

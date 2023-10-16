@@ -19,17 +19,25 @@ $router->get("/categoria/inserir",
 $router->post("/categoria/gravar",
     'Php\Biblioteca\Controller\CategoriaController@gravar'
 );
+
 $router->get("/categoria/index",
     'Php\Biblioteca\Controller\CategoriaController@index'
 );
 
-$router->get("/categoria/alterar",
+$router->get("/categoria/alterar/{id}",
     'Php\Biblioteca\Controller\CategoriaController@alterar'
 );
 
-$router->get("/categoria/excluir",
+$router->get("/categoria/excluir/{id}",
     'Php\Biblioteca\Controller\CategoriaController@excluir'
 );
+
+$router->post("/categoria/editar",
+    'Php\Biblioteca\Controller\CategoriaController@editar'
+);
+
+
+
 
 
 #$router->get("/", function(){ echo "Olá mundo";});
