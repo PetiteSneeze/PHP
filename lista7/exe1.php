@@ -1,36 +1,49 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>POO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
+<?php
+class Ponto {
+    private $x;
+    private $y;
+    private static $contador = 0;
 
-  <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h2 class="text-center">Orientação a objetos</h2>
-                <form method="POST" action="exe1resp.php">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">informe X</label>
-                        <input type="text" class="form-control" id="x" name="x" placeholder="Informe X">
-                    </div>
-                    <div class="mb-3">
-                        <label for="idade" class="form-label">Idade</label>
-                        <input type="number" class="form-control" id="y" name="y" placeholder="Informe Y">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Resultado</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    public function __construct($x, $y) {
+        $this->x = $x;
+        $this->y = $y;
+        self::$contador++;
+    }
 
-  
+    public static function getContador() {
+        return self::$contador;
+    }
 
+    public function calcularDistanciaOutroPonto(Ponto $outroPonto) {
+        $dx = $this->x - $outroPonto->x;
+        $dy = $this->y - $outroPonto->y;
+        return sqrt(pow($dx, 2) + pow($dy, 2));
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
-</html>
+    public function calcularDistanciaCoordenadas($x2, $y2) {
+        $dx = $this->x - $x2;
+        $dy = $this->y - $y2;
+        return sqrt(pow($dx, 2) + pow($dy, 2));
+    }
+
+    public static function calcularDistanciaEntrePontos($x1, $y1, $x2, $y2) {
+        $dx = $x2 - $x1;
+        $dy = $y2 - $y1;
+        return sqrt(pow($dx, 2) + pow($dy, 2));
+    }
+}
+
+// Exemplo de uso
+$pontoA = new Ponto(1, 2);
+$pontoB = new Ponto(4, 6);
+
+$distanciaAB = $pontoA->calcularDistanciaOutroPonto($pontoB);
+echo "Distância entre ponto A e ponto B: " . $distanciaAB . "\n";
+
+$distanciaXY = $pontoA->calcularDistanciaCoordenadas(3, 5);
+echo "Distância entre ponto A e coordenadas (3, 5): " . $distanciaXY . "\n";
+
+$distanciaXY2 = Ponto::calcularDistanciaEntrePontos(1, 2, 3, 5);
+echo "Distância entre pontos (1, 2) e (3, 5): " . $distanciaXY2 . "\n";
+
+echo "Número de objetos Ponto criados: " . Ponto::getContador() . "\n";
