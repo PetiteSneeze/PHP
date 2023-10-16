@@ -61,7 +61,7 @@
     }
     ?>
     
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" id="tabela">
             <thead class="table-light">
                 <tr>
                     <th scope="col">#</th>

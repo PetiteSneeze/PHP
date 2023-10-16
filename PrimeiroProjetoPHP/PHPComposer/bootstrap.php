@@ -32,10 +32,13 @@ $router->get("/categoria/excluir/{id}",
     'Php\Biblioteca\Controller\CategoriaController@excluir'
 );
 
-$router->post("/categoria/editar",
+$router->post("/categoria/editar/{id}",
     'Php\Biblioteca\Controller\CategoriaController@editar'
 );
 
+$router->post("/categoria/deletar/{id}",
+    'Php\Biblioteca\Controller\CategoriaController@deletar'
+);
 
 
 
